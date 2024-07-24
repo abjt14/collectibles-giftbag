@@ -18,8 +18,9 @@ In this project, I skip the overwhelming technical information of a transaction 
 > Note: You need to have Node.js and npm installed on your machine before following these steps.
 
 ```
-git clone https://github.com/abjt14/polyrhythmic-rings.git
-cd polyrhythmic-rings
+git clone
+https://github.com/abjt14/collectibles-giftbag.git
+cd collectibles-giftbag
 npm install
 npm run dev
 ```
