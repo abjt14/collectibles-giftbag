@@ -2,7 +2,11 @@ _this readme is still under construction_
 
 # Collectibles + GiftBag
 
-A project inspired by the delete collections animation on the Family App. You can check it out [here](https://x.com/family/status/1742574954481410558).
+What if NFTs were transferred in a giftbag?
+
+A project inspired by the delete collections animation on the Family App. It resembles our POV of throwing a paper ball in a dustbin. You can check it out [here](https://x.com/family/status/1742574954481410558).
+
+In this project, I skip the overwhelming technical information of a transaction page, and make the process feel special. It is course a prototype that can be further expanded into a beautiful experience for a production grade app.
 
 ## Built With
 
