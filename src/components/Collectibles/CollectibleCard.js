@@ -17,13 +17,15 @@ export default function CollectibleCard({
 }) {
   // using immer to update the original object array of collectibles
   const handleClick = React.useCallback(() => {
-    setCollectibleArray((prev) => {
-      return produce(prev, (draftState) => {
-        const index = draftState.findIndex((state) => state.slug == slug);
-        draftState[index].selected = !selected;
+    if (progress === "initial") {
+      setCollectibleArray((prev) => {
+        return produce(prev, (draftState) => {
+          const index = draftState.findIndex((state) => state.slug == slug);
+          draftState[index].selected = !selected;
+        });
       });
-    });
-  }, [slug, selected, setCollectibleArray]);
+    }
+  }, [slug, selected, setCollectibleArray, progress]);
 
   // using useState and useEffect to manage custom transition values for framer motion
   // based on the current value of "progress"
@@ -50,7 +52,7 @@ export default function CollectibleCard({
       layout
       transition={transition}
       className={clsx(
-        "size-40 p-2",
+        "size-40 p-2 outline-none",
         // managing z-index according to the value of "selected"
         // we do this because we create a layer between the selected and non-selected cards
         // as the shared layout transition occurs on the selected cards in order to blur out the latter

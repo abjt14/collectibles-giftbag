@@ -20,15 +20,17 @@ export default function DynamicButton({
     progress !== "completed";
 
   function handleClick() {
-    switch (progress) {
-      case "initial":
-        setProgress("confirm");
-        break;
-      case "confirm":
-        setProgress("authenticate");
-        break;
-      default:
-        break;
+    if (!disabled) {
+      switch (progress) {
+        case "initial":
+          setProgress("confirm");
+          break;
+        case "confirm":
+          setProgress("authenticate");
+          break;
+        default:
+          break;
+      }
     }
   }
 
@@ -85,7 +87,7 @@ export default function DynamicButton({
                 : "8px 24px",
           }}
           className={clsx(
-            "w-fit relative rounded-full py-2 px-6 flex justify-between items-center gap-[6px] border transition-[background,border,color,box-shadow] duration-150",
+            "w-fit relative rounded-full py-2 px-6 flex justify-between items-center gap-[6px] border transition-[background,border,color,box-shadow] duration-150 outline-none",
             buttonClassNames
           )}
           onClick={handleClick}
@@ -119,9 +121,7 @@ export default function DynamicButton({
             transition={transition}
             onMouseEnter={() => dismissButtonControls.start("hover")}
             onMouseLeave={() => dismissButtonControls.start("initial")}
-            className={clsx(
-              "p-2 rounded-full bg-black text-white border border-neutral-900 shadow-md shadow-neutral-300 group"
-            )}
+            className="p-2 rounded-full bg-black text-white border border-neutral-900 shadow-md shadow-neutral-300 outline-none"
             onClick={() => setProgress("initial")}
           >
             <DismissIcon
