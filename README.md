@@ -1,5 +1,3 @@
-_this readme is still under construction_
-
 # Collectibles + GiftBag
 
 What if NFTs were transferred in a giftbag?
